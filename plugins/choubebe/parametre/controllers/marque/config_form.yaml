@@ -1,0 +1,10 @@
+name: Marque
+form: $/choubebe/parametre/models/marque/fields.yaml
+modelClass: Choubebe\Parametre\Models\Marque
+defaultRedirect: choubebe/parametre/marque
+create:
+    redirect: 'choubebe/parametre/marque/update/:id'
+    redirectClose: choubebe/parametre/marque
+update:
+    redirect: choubebe/parametre/marque
+    redirectClose: choubebe/parametre/marque

@@ -1,0 +1,4 @@
+columns:
+    libelle:
+        label: Libellé
+        type: text

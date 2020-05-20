@@ -1,0 +1,12 @@
+list: $/choubebe/parametre/models/age/columns.yaml
+modelClass: Choubebe\Parametre\Models\Age
+title: Age
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'choubebe/parametre/age/update/:id'

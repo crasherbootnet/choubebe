@@ -1,0 +1,10 @@
+name: Banniere
+form: $/choubebe/choubebe/models/banniere/fields.yaml
+modelClass: Choubebe\Choubebe\Models\Banniere
+defaultRedirect: choubebe/choubebe/banniere
+create:
+    redirect: 'choubebe/choubebe/banniere/update/:id'
+    redirectClose: choubebe/choubebe/banniere
+update:
+    redirect: choubebe/choubebe/banniere
+    redirectClose: choubebe/choubebe/banniere

@@ -1,0 +1,14 @@
+fields:
+    libelle:
+        label: Libellé
+        span: auto
+        type: text
+    cover:
+        label: Cover
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

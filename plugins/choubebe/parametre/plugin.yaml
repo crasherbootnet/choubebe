@@ -1,0 +1,20 @@
+plugin:
+    name: 'choubebe.parametre::lang.plugin.name'
+    description: 'choubebe.parametre::lang.plugin.description'
+    author: choubebe
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    parametre:
+        label: Paramètre
+        url: choubebe/parametre/index
+        icon: icon-life-ring
+        sideMenu:
+            ages:
+                label: Ages
+                url: choubebe/parametre/age
+                icon: icon-list
+            marques:
+                label: Marques
+                url: choubebe/parametre/marque
+                icon: icon-list

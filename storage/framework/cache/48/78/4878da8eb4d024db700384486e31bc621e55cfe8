@@ -1,0 +1,25 @@
+1589915274a:1:{s:15:"site/header.htm";a:5:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:572:"<div class="col-md-3 logo">
+    <a class="navbar-brand hidden-sm" href="https://octobercms.com"><img src="https://d2f5cg397c40hu.cloudfront.net/website-static-files/images/october-color-logo-v1.svg" alt="OctoberCMS Logo" width="211" height="35"></a>
+</div>
+<div class="col-md-6 search">
+    <div class="row">
+        <input type="text" class="col-md-8 form-control">
+        <a href="" class="co-md-4 btn btn-primary">RECHERCHER</a>
+    </div>
+    
+</div>
+<div class="col-md-1 panier">
+    <a href="" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>
+</div>";s:5:"mtime";i:1589903471;s:6:"markup";s:572:"<div class="col-md-3 logo">
+    <a class="navbar-brand hidden-sm" href="https://octobercms.com"><img src="https://d2f5cg397c40hu.cloudfront.net/website-static-files/images/october-color-logo-v1.svg" alt="OctoberCMS Logo" width="211" height="35"></a>
+</div>
+<div class="col-md-6 search">
+    <div class="row">
+        <input type="text" class="col-md-8 form-control">
+        <a href="" class="co-md-4 btn btn-primary">RECHERCHER</a>
+    </div>
+    
+</div>
+<div class="col-md-1 panier">
+    <a href="" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>
+</div>";s:4:"code";N;}}

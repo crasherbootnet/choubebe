@@ -1,0 +1,62 @@
+fields:
+    libelle:
+        label: Libellé
+        span: auto
+        type: text
+    stock:
+        label: Stock
+        span: auto
+        type: number
+    reduction:
+        label: Réduction
+        span: auto
+        type: number
+    prix:
+        label: Prix
+        span: auto
+        type: number
+    description:
+        label: Description
+        size: ''
+        span: auto
+        type: textarea
+    cover:
+        label: Cover
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    photos:
+        label: Photos
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    sexe:
+        label: Sexe
+        options:
+            Masculin: m
+            Féminin: f
+        showSearch: true
+        span: auto
+        type: dropdown
+    marque:
+        label: Marque
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+        select: libelle
+    age:
+        label: Age
+        span: auto
+        nameFrom: name
+        descriptionFrom: description
+        type: relation
+        select: libelle

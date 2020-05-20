@@ -1,0 +1,231 @@
+1589915493a:1:{s:11:"default.htm";a:6:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:4236:"description = "Default layout"
+==
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>October CMS - {{ this.page.title }}</title>
+    <meta name="description" content="{{ this.page.meta_description }}">
+    <meta name="title" content="{{ this.page.meta_title }}">
+    <meta name="author" content="OctoberCMS">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="OctoberCMS">
+    <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+    <link href="{{ 'assets/css/vendor.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ 'assets/node_modules/bootstrap/dist/css/bootstrap.min.css'|theme }}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    {% styles %}
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header id="layout-header" class="row">
+        {% partial 'site/header' %}
+    </header>
+
+    <!-- Content -->
+    <section id="layout-content" class="container">
+        {% page %}
+    </section>
+
+    <!-- Footer -->
+    <footer id="layout-footer" class="row">
+        {% partial 'site/footer' %}
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
+    <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
+    <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
+    {% framework extras %}
+    {% scripts %}
+
+
+    
+
+
+    <script>
+        $(document).ready(function (e) {
+            $("input[name='typeuser']").click(function (e) {
+                if (e.target.value == 1) {
+                    $("#agence_first_login").css('display', 'block');
+                    $("#demarcheur_first_login").css('display', 'none');
+                } else {
+                    $("#agence_first_login").css('display', 'none');
+                    $("#demarcheur_first_login").css('display', 'block');
+                }
+            });
+
+            // afficher les informations (mail, tel) du demarcheur ou de l'agence
+            let contact = 0;
+            $("a[href='#contactPhone'").click(function () {
+                $(".text-area").css('display', 'block');
+                $("#contactPhone").css('display', 'flex');
+                contact += 1;
+                displayTextArea(2);
+            });
+            $(".contactForm").click(function () {
+                $(".text-area").css('display', 'block');
+                $("#contactForm").css('display', 'flex');
+                contact += 1;
+                displayTextArea(1);
+            });
+
+            let displayTextArea = function (form) {
+                if (contact > 1) {
+                    $(".text-area").removeClass('warning-small').addClass('warning-large');
+                } else {
+                    if (form == 2) {
+                        $("#contactPhone").css('float', 'left');
+                    }
+                    $(".text-area").addClass('warning-small');
+                }
+            }
+
+            // chargement des images
+            $(".imageminia").click(function (e) {
+                e.preventDefault();
+                // alert("chargement d'image");
+                // console.log(e.target.attr('imgptf'));
+                let indeximg = $(this).data('imgptf');
+                // console.log($(this).data('imgptf'));
+                // console.log($(".imggf-"+indeximg).attr('src'));
+                // $(".slide.active img").attr('src', $(".imggf-"+indeximg).attr('src'));
+                // console.log();
+                $(".slide.active").removeClass("active").css("opacity", 0);
+                $(".imggf-" + indeximg).parent().addClass("active").css("opacity", '');
+                $(".img-miniature li.active").removeClass("active");
+                $(this).parent().addClass('active');
+            });
+
+            $("#addShopping").click(function(){
+                $.ajax({
+                url : "http://localhost:8888/choubebe/register-commande/"+$(this).data('id'),
+                success: function(data){
+                    $("#myModal").modal('toggle');
+                }
+                })
+            });
+
+        });
+    </script>
+</body>
+
+</html>";s:5:"mtime";i:1589914883;s:6:"markup";s:4202:"<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>October CMS - {{ this.page.title }}</title>
+    <meta name="description" content="{{ this.page.meta_description }}">
+    <meta name="title" content="{{ this.page.meta_title }}">
+    <meta name="author" content="OctoberCMS">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="OctoberCMS">
+    <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+    <link href="{{ 'assets/css/vendor.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ 'assets/node_modules/bootstrap/dist/css/bootstrap.min.css'|theme }}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    {% styles %}
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header id="layout-header" class="row">
+        {% partial 'site/header' %}
+    </header>
+
+    <!-- Content -->
+    <section id="layout-content" class="container">
+        {% page %}
+    </section>
+
+    <!-- Footer -->
+    <footer id="layout-footer" class="row">
+        {% partial 'site/footer' %}
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
+    <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
+    <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
+    {% framework extras %}
+    {% scripts %}
+
+
+    
+
+
+    <script>
+        $(document).ready(function (e) {
+            $("input[name='typeuser']").click(function (e) {
+                if (e.target.value == 1) {
+                    $("#agence_first_login").css('display', 'block');
+                    $("#demarcheur_first_login").css('display', 'none');
+                } else {
+                    $("#agence_first_login").css('display', 'none');
+                    $("#demarcheur_first_login").css('display', 'block');
+                }
+            });
+
+            // afficher les informations (mail, tel) du demarcheur ou de l'agence
+            let contact = 0;
+            $("a[href='#contactPhone'").click(function () {
+                $(".text-area").css('display', 'block');
+                $("#contactPhone").css('display', 'flex');
+                contact += 1;
+                displayTextArea(2);
+            });
+            $(".contactForm").click(function () {
+                $(".text-area").css('display', 'block');
+                $("#contactForm").css('display', 'flex');
+                contact += 1;
+                displayTextArea(1);
+            });
+
+            let displayTextArea = function (form) {
+                if (contact > 1) {
+                    $(".text-area").removeClass('warning-small').addClass('warning-large');
+                } else {
+                    if (form == 2) {
+                        $("#contactPhone").css('float', 'left');
+                    }
+                    $(".text-area").addClass('warning-small');
+                }
+            }
+
+            // chargement des images
+            $(".imageminia").click(function (e) {
+                e.preventDefault();
+                // alert("chargement d'image");
+                // console.log(e.target.attr('imgptf'));
+                let indeximg = $(this).data('imgptf');
+                // console.log($(this).data('imgptf'));
+                // console.log($(".imggf-"+indeximg).attr('src'));
+                // $(".slide.active img").attr('src', $(".imggf-"+indeximg).attr('src'));
+                // console.log();
+                $(".slide.active").removeClass("active").css("opacity", 0);
+                $(".imggf-" + indeximg).parent().addClass("active").css("opacity", '');
+                $(".img-miniature li.active").removeClass("active");
+                $(this).parent().addClass('active');
+            });
+
+            $("#addShopping").click(function(){
+                $.ajax({
+                url : "http://localhost:8888/choubebe/register-commande/"+$(this).data('id'),
+                success: function(data){
+                    $("#myModal").modal('toggle');
+                }
+                })
+            });
+
+        });
+    </script>
+</body>
+
+</html>";s:4:"code";N;s:11:"description";s:14:"Default layout";}}

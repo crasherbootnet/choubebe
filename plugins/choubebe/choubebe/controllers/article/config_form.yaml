@@ -1,0 +1,10 @@
+name: Article
+form: $/choubebe/choubebe/models/article/fields.yaml
+modelClass: Choubebe\Choubebe\Models\Article
+defaultRedirect: choubebe/choubebe/article
+create:
+    redirect: 'choubebe/choubebe/article/update/:id'
+    redirectClose: choubebe/choubebe/article
+update:
+    redirect: choubebe/choubebe/article
+    redirectClose: choubebe/choubebe/article

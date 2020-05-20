@@ -1,0 +1,12 @@
+list: $/choubebe/parametre/models/marque/columns.yaml
+modelClass: Choubebe\Parametre\Models\Marque
+title: Marque
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'choubebe/parametre/marque/update/:id'

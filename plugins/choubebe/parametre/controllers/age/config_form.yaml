@@ -1,0 +1,10 @@
+name: Age
+form: $/choubebe/parametre/models/age/fields.yaml
+modelClass: Choubebe\Parametre\Models\Age
+defaultRedirect: choubebe/parametre/age
+create:
+    redirect: 'choubebe/parametre/age/update/:id'
+    redirectClose: choubebe/parametre/age
+update:
+    redirect: choubebe/parametre/age
+    redirectClose: choubebe/parametre/age

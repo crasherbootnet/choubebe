@@ -1,0 +1,14 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table choubebe_parametre_'
+    - builder_table_create_choubebe_parametre_.php
+1.0.3:
+    - 'Updated table choubebe_parametre_'
+    - builder_table_update_choubebe_parametre_marque.php
+1.0.4:
+    - 'Created table choubebe_parametre_age'
+    - builder_table_create_choubebe_parametre_age.php
+1.0.5:
+    - 'Updated table choubebe_parametre_age'
+    - builder_table_update_choubebe_parametre_age.php

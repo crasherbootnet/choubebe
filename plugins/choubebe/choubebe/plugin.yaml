@@ -1,0 +1,15 @@
+plugin:
+    name: 'choubebe.choubebe::lang.plugin.name'
+    description: 'choubebe.choubebe::lang.plugin.description'
+    author: choubebe
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    article:
+        label: Article
+        url: choubebe/choubebe/article
+        icon: icon-life-ring
+    bannieres:
+        label: Bannière
+        url: choubebe/choubebe/banniere
+        icon: icon-life-ring

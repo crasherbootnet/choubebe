@@ -1,0 +1,127 @@
+title = "Demonstration"
+url = "/articles/:article_id"
+layout = "default"
+[DetailArticle]
+==
+
+<style>
+    .slide {
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        right: 0;
+        min-height: 420px;
+        text-align: center;
+        white-space: nowrap;
+        line-height: 415px;
+    }
+
+    .slideset {
+        position: relative;
+        background: #ebebeb;
+        border: 1px solid #dddddd;
+    }
+
+    .slideshow {
+        position: relative;
+        margin: 0 0 20px;
+    }
+
+    .responsive {
+        height: 160px;
+    }
+
+    .slide img {
+        margin: auto;
+        display: inline;
+        vertical-align: middle;
+        line-height: normal;
+    }
+
+    .slide img {
+        width: 43%;
+    }
+
+    .specification span{
+        font-weight: 500;font-size: 16px;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="slideshow gallery-js-ready autorotation-disabled">
+            <div class="mask">
+                <div class="slideset" style="height: 420px;">
+                    {% for key,photo in article.photos %}
+                    {% if key == 0 %}
+                    <div class="slide active" style="display: block;"><img itemprop="image" class="imggf-1"
+                            src="{{ article.photos[0].getPath }}"
+                            alt="{{ article.libelle }}"></div>
+                    {% else %}
+                    <div class="slide" style="display: block; opacity: 0;">
+                        <img itemprop="image" class="imggf-{{ key+1 }}" src="{{ photo.getPath }}"
+                            alt="{{ article.libelle }}"></div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <span class="loader" style="display: none;"></span>
+            </div>
+            <ul class="pagination img-miniature">
+
+                {% for key,photo in article.photos %}
+                    {% if key == 0 %}
+                        <li class="active">
+                            <a href="javascript:void(0)" class="imageminia" data-imgptf="1"><img
+                                    style="width: 100px;height: 66px;" src="{{ photo.getPath | resize(100,100)}}"
+                                    alt="{{ article.libelle }}">
+                            </a>
+                        </li>
+                    {% else %}
+                        <li><a href="javascript:void(0)" class="imageminia" data-imgptf="{{ key +1}}"><img
+                                    style="width: 100px;height: 66px;" src="{{ photo.getPath| resize(100,100) }}"
+                                    alt="{{ article.libelle }}"></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <h4> {{ article.libelle }} </h4>
+        <span> Marque : {{ article.marque.libelle }}</span> <br>
+        <span> Prix : {{ article.prix }} FCFA</span> <br>
+        <span> Sexe : {{ article.sexe }} FCFA</span> <br>
+        <span> Age : {{ article.age.libelle }} FCFA</span> <br>
+        <button type="button" id="addShopping" data-id="{{ article.id }}" class="btn btn-primary">
+            <i class="fas fa-shopping-cart"></i>
+            Je commande
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <span><h4>Description</h4></span>
+        <p>
+            {{ article.description }}
+        </p>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Ajouté au panier !</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>{{ article.libelle }} a été ajouté à votre panier </p>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">POURSUIVRE VOTRE ACHAT</button>
+          <a href="{{ url('cart') }}" class="btn btn-primary">FINALISER LA COMMANDE </a>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -12,3 +12,18 @@
 1.0.5:
     - 'Updated table choubebe_parametre_age'
     - builder_table_update_choubebe_parametre_age.php
+1.0.6:
+    - 'Created table choubebe_parametre_statut_commande'
+    - builder_table_create_choubebe_parametre_statut_commande.php
+1.0.7:
+    - 'Updated table choubebe_parametre_statut_commande'
+    - builder_table_update_choubebe_parametre_statut_commande.php
+1.0.8:
+    - 'Updated table choubebe_parametre_statut_commande'
+    - builder_table_update_choubebe_parametre_statut_commande_2.php
+1.0.9:
+    - 'Drop table choubebe_parametre_statut_commande'
+    - builder_table_delete_choubebe_parametre_statut_commande.php
+1.0.10:
+    - 'Created table choubebe_parametre_statut_commande'
+    - builder_table_create_choubebe_parametre_statut_commande_2.php

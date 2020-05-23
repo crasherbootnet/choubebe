@@ -1,0 +1,76 @@
+1590264229a:1:{s:23:"finaliser_commandes.htm";a:9:{s:8:"fileName";s:23:"finaliser_commandes.htm";s:7:"content";s:1186:"title = "Demonstration"
+url = "/finaliser-commande"
+layout = "default"
+[Commande]
+==
+
+
+<style>
+    .form-control {
+        height: 35px;
+        font-size: 14px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    #commander{
+        height: 34px;
+        font-size: 14px;
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+</style>
+<div class="row">
+    <h4 class="offset-md-6 col-md-3">Finalisation de la commande </h4>
+    <form class="offset-md-4 col-md-6" method="post" data-request-flash data-request="onCommande" style="margin-top: 30px">
+    <div class="form-group">
+        <label>Nom et prénoms</label>
+        <input type="text" name="name" class="form-control" placeholder="Nom et prénoms">
+    </div>
+    <div class="form-group">
+        <label>Téléphone</label>
+        <input type="text" name="tel" class="form-control" placeholder="Téléphone">
+    </div>
+    <div class="form-group">
+        <label>Lieu de livraison</label>
+        <input type="text" name="commune" class="form-control" placeholder="Ou souhaitez vous être livré ?">
+    </div>
+    <button type="submit" class="btn btn-primary" id="commander">Commander</button>
+    </form>
+</div>";s:5:"mtime";i:1590252109;s:6:"markup";s:1099:"<style>
+    .form-control {
+        height: 35px;
+        font-size: 14px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    #commander{
+        height: 34px;
+        font-size: 14px;
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+</style>
+<div class="row">
+    <h4 class="offset-md-6 col-md-3">Finalisation de la commande </h4>
+    <form class="offset-md-4 col-md-6" method="post" data-request-flash data-request="onCommande" style="margin-top: 30px">
+    <div class="form-group">
+        <label>Nom et prénoms</label>
+        <input type="text" name="name" class="form-control" placeholder="Nom et prénoms">
+    </div>
+    <div class="form-group">
+        <label>Téléphone</label>
+        <input type="text" name="tel" class="form-control" placeholder="Téléphone">
+    </div>
+    <div class="form-group">
+        <label>Lieu de livraison</label>
+        <input type="text" name="commune" class="form-control" placeholder="Ou souhaitez vous être livré ?">
+    </div>
+    <button type="submit" class="btn btn-primary" id="commander">Commander</button>
+    </form>
+</div>";s:4:"code";N;s:5:"title";s:13:"Demonstration";s:3:"url";s:19:"/finaliser-commande";s:6:"layout";s:7:"default";s:8:"Commande";a:0:{}}}

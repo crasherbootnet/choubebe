@@ -64,65 +64,83 @@ class __TwigTemplate_c81eebcbc25f586256a8fe1c7665bb73741e8f5bc90bbd46d487e17f1b5
         echo "\" rel=\"stylesheet\">
     <link href=\"";
         // line 14
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/css/home.css");
+        echo "\" rel=\"stylesheet\">
+    <link href=\"";
+        // line 15
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/css/theme.css");
         echo "\" rel=\"stylesheet\">
     <link rel=\"stylesheet\" href=\"";
-        // line 15
+        // line 16
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/node_modules/bootstrap/dist/css/bootstrap.min.css");
         echo "\">
     <script src=\"https://kit.fontawesome.com/a076d05399.js\"></script>
     ";
-        // line 17
+        // line 18
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('css');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('styles');
-        // line 18
-        echo "</head>
+        // line 19
+        echo "
+    <style>
+        #layout-footer{
+            margin-top: 100px;
+            margin-bottom: 30px;
+        }
 
-<body>
+        #layout-content{
+            background: #fff;
+            box-shadow: 0 3px 18px rgba(0,0,0,0.08);
+            padding: 26px 20px 0;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body style=\"padding-top: 15px;background-color: #f5f5f5;\">
 
     <!-- Header -->
-    <header id=\"layout-header\" class=\"row\">
+    <header id=\"layout-header\" class=\"container\">
         ";
-        // line 24
+        // line 39
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/header"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 25
+        // line 40
         echo "    </header>
 
     <!-- Content -->
     <section id=\"layout-content\" class=\"container\">
         ";
-        // line 29
+        // line 44
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
-        // line 30
+        // line 45
         echo "    </section>
 
     <!-- Footer -->
-    <footer id=\"layout-footer\" class=\"row\">
+    <footer id=\"layout-footer\" class=\"container-fluid\">
         ";
-        // line 34
+        // line 49
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 35
+        // line 50
         echo "    </footer>
 
     <!-- Scripts -->
     <script src=\"";
-        // line 38
+        // line 53
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/jquery.js");
         echo "\"></script>
     <script src=\"";
-        // line 39
+        // line 54
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/bootstrap.js");
         echo "\"></script>
     <script src=\"";
-        // line 40
+        // line 55
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/javascript/app.js");
         echo "\"></script>
     ";
-        // line 41
+        // line 56
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="' . Request::getBasePath() . '/modules/system/assets/js/framework.combined-min.js"></script>'.PHP_EOL;
@@ -133,16 +151,12 @@ class __TwigTemplate_c81eebcbc25f586256a8fe1c7665bb73741e8f5bc90bbd46d487e17f1b5
         }
         echo '<link rel="stylesheet" property="stylesheet" href="' . Request::getBasePath() .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 42
+        // line 57
         echo "    ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 43
+        // line 58
         echo "
-
-    
-
-
     <script>
         \$(document).ready(function (e) {
             \$(\"input[name='typeuser']\").click(function (e) {
@@ -198,11 +212,16 @@ class __TwigTemplate_c81eebcbc25f586256a8fe1c7665bb73741e8f5bc90bbd46d487e17f1b5
             });
 
             \$(\"#addShopping\").click(function(){
+                \$(\"#addShopping\").attr(\"disabled\", \"disabled\");
                 \$.ajax({
-                url : \"http://localhost:8888/choubebe/register-commande/\"+\$(this).data('id'),
-                success: function(data){
-                    \$(\"#myModal\").modal('toggle');
-                }
+                    url : \"http://localhost:8888/choubebe/register-commande/\"+\$(this).data('id'),
+                    success: function(data){
+                        \$(\"#myModal\").modal('toggle');
+                        \$(\"#addShopping\").removeAttr(\"disabled\");
+                    },
+                    error: function(error){
+                        \$(\"#addShopping\").removeAttr(\"disabled\");
+                    }
                 })
             });
 
@@ -225,7 +244,7 @@ class __TwigTemplate_c81eebcbc25f586256a8fe1c7665bb73741e8f5bc90bbd46d487e17f1b5
 
     public function getDebugInfo()
     {
-        return array (  141 => 43,  137 => 42,  126 => 41,  122 => 40,  118 => 39,  114 => 38,  109 => 35,  105 => 34,  99 => 30,  97 => 29,  91 => 25,  87 => 24,  79 => 18,  76 => 17,  71 => 15,  67 => 14,  63 => 13,  59 => 12,  52 => 8,  48 => 7,  44 => 6,  37 => 1,);
+        return array (  159 => 58,  155 => 57,  144 => 56,  140 => 55,  136 => 54,  132 => 53,  127 => 50,  123 => 49,  117 => 45,  115 => 44,  109 => 40,  105 => 39,  83 => 19,  80 => 18,  75 => 16,  71 => 15,  67 => 14,  63 => 13,  59 => 12,  52 => 8,  48 => 7,  44 => 6,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -243,16 +262,31 @@ class __TwigTemplate_c81eebcbc25f586256a8fe1c7665bb73741e8f5bc90bbd46d487e17f1b5
     <meta name=\"generator\" content=\"OctoberCMS\">
     <link rel=\"icon\" type=\"image/png\" href=\"{{ 'assets/images/october.png'|theme }}\">
     <link href=\"{{ 'assets/css/vendor.css'|theme }}\" rel=\"stylesheet\">
+    <link href=\"{{ 'assets/css/home.css'|theme }}\" rel=\"stylesheet\">
     <link href=\"{{ 'assets/css/theme.css'|theme }}\" rel=\"stylesheet\">
     <link rel=\"stylesheet\" href=\"{{ 'assets/node_modules/bootstrap/dist/css/bootstrap.min.css'|theme }}\">
     <script src=\"https://kit.fontawesome.com/a076d05399.js\"></script>
     {% styles %}
+
+    <style>
+        #layout-footer{
+            margin-top: 100px;
+            margin-bottom: 30px;
+        }
+
+        #layout-content{
+            background: #fff;
+            box-shadow: 0 3px 18px rgba(0,0,0,0.08);
+            padding: 26px 20px 0;
+            padding-bottom: 20px;
+        }
+    </style>
 </head>
 
-<body>
+<body style=\"padding-top: 15px;background-color: #f5f5f5;\">
 
     <!-- Header -->
-    <header id=\"layout-header\" class=\"row\">
+    <header id=\"layout-header\" class=\"container\">
         {% partial 'site/header' %}
     </header>
 
@@ -262,7 +296,7 @@ class __TwigTemplate_c81eebcbc25f586256a8fe1c7665bb73741e8f5bc90bbd46d487e17f1b5
     </section>
 
     <!-- Footer -->
-    <footer id=\"layout-footer\" class=\"row\">
+    <footer id=\"layout-footer\" class=\"container-fluid\">
         {% partial 'site/footer' %}
     </footer>
 
@@ -272,10 +306,6 @@ class __TwigTemplate_c81eebcbc25f586256a8fe1c7665bb73741e8f5bc90bbd46d487e17f1b5
     <script src=\"{{ 'assets/javascript/app.js'|theme }}\"></script>
     {% framework extras %}
     {% scripts %}
-
-
-    
-
 
     <script>
         \$(document).ready(function (e) {
@@ -332,11 +362,16 @@ class __TwigTemplate_c81eebcbc25f586256a8fe1c7665bb73741e8f5bc90bbd46d487e17f1b5
             });
 
             \$(\"#addShopping\").click(function(){
+                \$(\"#addShopping\").attr(\"disabled\", \"disabled\");
                 \$.ajax({
-                url : \"http://localhost:8888/choubebe/register-commande/\"+\$(this).data('id'),
-                success: function(data){
-                    \$(\"#myModal\").modal('toggle');
-                }
+                    url : \"http://localhost:8888/choubebe/register-commande/\"+\$(this).data('id'),
+                    success: function(data){
+                        \$(\"#myModal\").modal('toggle');
+                        \$(\"#addShopping\").removeAttr(\"disabled\");
+                    },
+                    error: function(error){
+                        \$(\"#addShopping\").removeAttr(\"disabled\");
+                    }
                 })
             });
 

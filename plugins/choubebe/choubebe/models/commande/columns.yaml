@@ -1,0 +1,9 @@
+columns:
+    name:
+        label: Nom
+        type: text
+        searchable: true
+    tel:
+        label: Téléphone
+        type: text
+        searchable: true

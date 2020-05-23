@@ -1,0 +1,9 @@
+fields:
+    name:
+        label: 'Nom et prénoms'
+        span: auto
+        type: text
+    tel:
+        label: Téléphone
+        span: auto
+        type: text

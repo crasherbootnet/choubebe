@@ -18,3 +18,7 @@ navigation:
                 label: Marques
                 url: choubebe/parametre/marque
                 icon: icon-list
+            statutcommandes:
+                label: 'Statut commande'
+                url: choubebe/parametre/statutcommande
+                icon: icon-sitemap

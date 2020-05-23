@@ -1,4 +1,4 @@
-1589915493a:1:{s:8:"home.htm";a:9:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:6834:"title = "Demonstration"
+1590264229a:1:{s:8:"home.htm";a:9:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:7202:"title = "Demonstration"
 url = "/"
 layout = "default"
 [Home]
@@ -135,19 +135,20 @@ layout = "default"
 
 <div class="row">
     <div class="col-md-12">
-        <div class="col-md-3">
-            <ul>
-                <li>
+        <div class="col-md-3" id="categorie">
+            <div id="categorie-libelle">Catégorie</div>
+            <ul class="categorie-parent">
+                <!--<li>
                     <a href="">Marque</a>
                     <ul>
                         {% for marque in marques %}
                         <li><a href="">{{ marque.libelle }}</a></li>
                         {% endfor %}
                     </ul>
-                </li>
-                <li>
+                </li>-->
+                <li >
                     <a href="">Mois</a>
-                    <ul>
+                    <ul >
                         {% for age in ages %}
                         <li><a href="">{{ age.libelle }}</a></li>
                         {% endfor %}
@@ -155,9 +156,9 @@ layout = "default"
                 </li>
                 <li>
                     <a href="">Sexe</a>
-                    <ul>
-                        <li><a href="">Femme</a></li>
-                        <li><a href="">Homme</a></li>
+                    <ul >
+                        <li><a href="">Garcons</a></li>
+                        <li><a href="">Fille</a></li>
                     </ul>
                 </li>
             </ul>
@@ -187,9 +188,10 @@ layout = "default"
     </div>
 </div>
 
-<div class="row">
+<div class="row" style="margin-left: 0%; margin-right: 0%;">
     {% for article in articles %}
-    <a href="{{ url('articles') }}/{{ article.id }}" class="col-md-3" style="margin-bottom: 15px;">
+    <a href="{{ url('articles') }}/{{ article.id }}" class="col-md-3" style="margin-bottom: 15px;
+    text-decoration: none;color: #000">
         {% if article.cover and article.cover.getPath %}
             <div style="width: 260px;height: 250px;">
                 <img src="{{ article.cover.getPath }}" style="width: 100%;height: 250px;" alt="">
@@ -211,12 +213,18 @@ layout = "default"
             <div class="product-price-container pl-price" data-cerberus="txt_plp_nonDiscountedPrice"
                 style="visibility: visible;font-weight: 600;font-size: 18px;font-weight: 600;font-size: 18px;text-align: center">
                 <span class="product-price">
-                    {{ article.prix }}
+                    {{ article.prix }} FCFA
                 </span>
             </div>
         </div>
     </a>
 {% endfor %}
+</div>
+
+<div class="row">
+    <div class="col-md-12 d-flex justify-content-center" style="margin-left: 0px;margin-right: 0px;">
+        {{ articles.render|raw }}
+    </div>
 </div>
 
 <script>
@@ -246,7 +254,7 @@ layout = "default"
       slides[slideIndex-1].style.display = "block";  
       dots[slideIndex-1].className += " active";
     }
-</script>";s:5:"mtime";i:1589914887;s:6:"markup";s:6771:"<style>
+</script>";s:5:"mtime";i:1590259399;s:6:"markup";s:7139:"<style>
     * {
         box-sizing: border-box
     }
@@ -378,19 +386,20 @@ layout = "default"
 
 <div class="row">
     <div class="col-md-12">
-        <div class="col-md-3">
-            <ul>
-                <li>
+        <div class="col-md-3" id="categorie">
+            <div id="categorie-libelle">Catégorie</div>
+            <ul class="categorie-parent">
+                <!--<li>
                     <a href="">Marque</a>
                     <ul>
                         {% for marque in marques %}
                         <li><a href="">{{ marque.libelle }}</a></li>
                         {% endfor %}
                     </ul>
-                </li>
-                <li>
+                </li>-->
+                <li >
                     <a href="">Mois</a>
-                    <ul>
+                    <ul >
                         {% for age in ages %}
                         <li><a href="">{{ age.libelle }}</a></li>
                         {% endfor %}
@@ -398,9 +407,9 @@ layout = "default"
                 </li>
                 <li>
                     <a href="">Sexe</a>
-                    <ul>
-                        <li><a href="">Femme</a></li>
-                        <li><a href="">Homme</a></li>
+                    <ul >
+                        <li><a href="">Garcons</a></li>
+                        <li><a href="">Fille</a></li>
                     </ul>
                 </li>
             </ul>
@@ -430,9 +439,10 @@ layout = "default"
     </div>
 </div>
 
-<div class="row">
+<div class="row" style="margin-left: 0%; margin-right: 0%;">
     {% for article in articles %}
-    <a href="{{ url('articles') }}/{{ article.id }}" class="col-md-3" style="margin-bottom: 15px;">
+    <a href="{{ url('articles') }}/{{ article.id }}" class="col-md-3" style="margin-bottom: 15px;
+    text-decoration: none;color: #000">
         {% if article.cover and article.cover.getPath %}
             <div style="width: 260px;height: 250px;">
                 <img src="{{ article.cover.getPath }}" style="width: 100%;height: 250px;" alt="">
@@ -454,12 +464,18 @@ layout = "default"
             <div class="product-price-container pl-price" data-cerberus="txt_plp_nonDiscountedPrice"
                 style="visibility: visible;font-weight: 600;font-size: 18px;font-weight: 600;font-size: 18px;text-align: center">
                 <span class="product-price">
-                    {{ article.prix }}
+                    {{ article.prix }} FCFA
                 </span>
             </div>
         </div>
     </a>
 {% endfor %}
+</div>
+
+<div class="row">
+    <div class="col-md-12 d-flex justify-content-center" style="margin-left: 0px;margin-right: 0px;">
+        {{ articles.render|raw }}
+    </div>
 </div>
 
 <script>

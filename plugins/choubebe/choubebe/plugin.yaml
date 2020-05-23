@@ -13,3 +13,7 @@ navigation:
         label: Bannière
         url: choubebe/choubebe/banniere
         icon: icon-life-ring
+    commandes:
+        label: Commandes
+        url: choubebe/choubebe/commande
+        icon: icon-life-ring

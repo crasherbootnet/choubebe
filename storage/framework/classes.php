@@ -91,4 +91,11 @@
   'toughdeveloper\\imageresizer\\Plugin' => 'plugins/toughdeveloper/imageresizer/Plugin.php',
   'ToughDeveloper\\ImageResizer\\Classes\\Image' => 'plugins/toughdeveloper/imageresizer/classes/Image.php',
   'ToughDeveloper\\ImageResizer\\Models\\Settings' => 'plugins/toughdeveloper/imageresizer/models/Settings.php',
+  'Choubebe\\Choubebe\\Components\\Cart' => 'plugins/choubebe/choubebe/components/Cart.php',
+  'choubebe\\parametre\\Controllers\\statutcommande' => 'plugins/choubebe/parametre/controllers/statutcommande.php',
+  'Choubebe\\Parametre\\Models\\StatutCommande' => 'plugins/choubebe/parametre/models/StatutCommande.php',
+  'Choubebe\\Choubebe\\Components\\Commande' => 'plugins/choubebe/choubebe/components/Commande.php',
+  'Choubebe\\Choubebe\\Models\\Commande' => 'plugins/choubebe/choubebe/models/Commande.php',
+  'choubebe\\choubebe\\Controllers\\commande' => 'plugins/choubebe/choubebe/controllers/commande.php',
+  'Choubebe\\Choubebe\\Models\\CommandeProduit' => 'plugins/choubebe/choubebe/models/CommandeProduit.php',
 );

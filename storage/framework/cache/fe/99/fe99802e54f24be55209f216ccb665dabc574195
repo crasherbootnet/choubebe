@@ -1,4 +1,4 @@
-1589915493a:1:{s:11:"default.htm";a:6:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:4236:"description = "Default layout"
+1590264229a:1:{s:11:"default.htm";a:6:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:4958:"description = "Default layout"
 ==
 <!DOCTYPE html>
 <html>
@@ -13,16 +13,31 @@
     <meta name="generator" content="OctoberCMS">
     <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
     <link href="{{ 'assets/css/vendor.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/home.css'|theme }}" rel="stylesheet">
     <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ 'assets/node_modules/bootstrap/dist/css/bootstrap.min.css'|theme }}">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     {% styles %}
+
+    <style>
+        #layout-footer{
+            margin-top: 100px;
+            margin-bottom: 30px;
+        }
+
+        #layout-content{
+            background: #fff;
+            box-shadow: 0 3px 18px rgba(0,0,0,0.08);
+            padding: 26px 20px 0;
+            padding-bottom: 20px;
+        }
+    </style>
 </head>
 
-<body>
+<body style="padding-top: 15px;background-color: #f5f5f5;">
 
     <!-- Header -->
-    <header id="layout-header" class="row">
+    <header id="layout-header" class="container">
         {% partial 'site/header' %}
     </header>
 
@@ -32,7 +47,7 @@
     </section>
 
     <!-- Footer -->
-    <footer id="layout-footer" class="row">
+    <footer id="layout-footer" class="container-fluid">
         {% partial 'site/footer' %}
     </footer>
 
@@ -42,10 +57,6 @@
     <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
     {% framework extras %}
     {% scripts %}
-
-
-    
-
 
     <script>
         $(document).ready(function (e) {
@@ -102,11 +113,16 @@
             });
 
             $("#addShopping").click(function(){
+                $("#addShopping").attr("disabled", "disabled");
                 $.ajax({
-                url : "http://localhost:8888/choubebe/register-commande/"+$(this).data('id'),
-                success: function(data){
-                    $("#myModal").modal('toggle');
-                }
+                    url : "http://localhost:8888/choubebe/register-commande/"+$(this).data('id'),
+                    success: function(data){
+                        $("#myModal").modal('toggle');
+                        $("#addShopping").removeAttr("disabled");
+                    },
+                    error: function(error){
+                        $("#addShopping").removeAttr("disabled");
+                    }
                 })
             });
 
@@ -114,7 +130,7 @@
     </script>
 </body>
 
-</html>";s:5:"mtime";i:1589914883;s:6:"markup";s:4202:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1590261667;s:6:"markup";s:4924:"<!DOCTYPE html>
 <html>
 
 <head>
@@ -127,16 +143,31 @@
     <meta name="generator" content="OctoberCMS">
     <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
     <link href="{{ 'assets/css/vendor.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/home.css'|theme }}" rel="stylesheet">
     <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ 'assets/node_modules/bootstrap/dist/css/bootstrap.min.css'|theme }}">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     {% styles %}
+
+    <style>
+        #layout-footer{
+            margin-top: 100px;
+            margin-bottom: 30px;
+        }
+
+        #layout-content{
+            background: #fff;
+            box-shadow: 0 3px 18px rgba(0,0,0,0.08);
+            padding: 26px 20px 0;
+            padding-bottom: 20px;
+        }
+    </style>
 </head>
 
-<body>
+<body style="padding-top: 15px;background-color: #f5f5f5;">
 
     <!-- Header -->
-    <header id="layout-header" class="row">
+    <header id="layout-header" class="container">
         {% partial 'site/header' %}
     </header>
 
@@ -146,7 +177,7 @@
     </section>
 
     <!-- Footer -->
-    <footer id="layout-footer" class="row">
+    <footer id="layout-footer" class="container-fluid">
         {% partial 'site/footer' %}
     </footer>
 
@@ -156,10 +187,6 @@
     <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
     {% framework extras %}
     {% scripts %}
-
-
-    
-
 
     <script>
         $(document).ready(function (e) {
@@ -216,11 +243,16 @@
             });
 
             $("#addShopping").click(function(){
+                $("#addShopping").attr("disabled", "disabled");
                 $.ajax({
-                url : "http://localhost:8888/choubebe/register-commande/"+$(this).data('id'),
-                success: function(data){
-                    $("#myModal").modal('toggle');
-                }
+                    url : "http://localhost:8888/choubebe/register-commande/"+$(this).data('id'),
+                    success: function(data){
+                        $("#myModal").modal('toggle');
+                        $("#addShopping").removeAttr("disabled");
+                    },
+                    error: function(error){
+                        $("#addShopping").removeAttr("disabled");
+                    }
                 })
             });
 

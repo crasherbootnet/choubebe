@@ -1,0 +1,10 @@
+name: Commande
+form: $/choubebe/choubebe/models/commande/fields.yaml
+modelClass: Choubebe\Choubebe\Models\Commande
+defaultRedirect: choubebe/choubebe/commande
+create:
+    redirect: 'choubebe/choubebe/commande/update/:id'
+    redirectClose: choubebe/choubebe/commande
+update:
+    redirect: choubebe/choubebe/commande
+    redirectClose: choubebe/choubebe/commande

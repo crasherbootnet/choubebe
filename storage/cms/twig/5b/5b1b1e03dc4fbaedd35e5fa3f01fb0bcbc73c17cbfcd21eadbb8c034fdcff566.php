@@ -166,53 +166,54 @@ class __TwigTemplate_3b2840b806c0223932b91d388966ca5389f3be7fe42fd60ebb6484124f1
 
 <div class=\"row\">
     <div class=\"col-md-12\">
-        <div class=\"col-md-3\">
-            <ul>
-                <li>
+        <div class=\"col-md-3\" id=\"categorie\">
+            <div id=\"categorie-libelle\">Catégorie</div>
+            <ul class=\"categorie-parent\">
+                <!--<li>
                     <a href=\"\">Marque</a>
                     <ul>
                         ";
-        // line 138
+        // line 139
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["marques"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["marque"]) {
-            // line 139
+            // line 140
             echo "                        <li><a href=\"\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["marque"], "libelle", [], "any", false, false, false, 139), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["marque"], "libelle", [], "any", false, false, false, 140), "html", null, true);
             echo "</a></li>
                         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['marque'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 141
+        // line 142
         echo "                    </ul>
-                </li>
-                <li>
+                </li>-->
+                <li >
                     <a href=\"\">Mois</a>
-                    <ul>
+                    <ul >
                         ";
-        // line 146
+        // line 147
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["ages"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["age"]) {
-            // line 147
+            // line 148
             echo "                        <li><a href=\"\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["age"], "libelle", [], "any", false, false, false, 147), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["age"], "libelle", [], "any", false, false, false, 148), "html", null, true);
             echo "</a></li>
                         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['age'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 149
+        // line 150
         echo "                    </ul>
                 </li>
                 <li>
                     <a href=\"\">Sexe</a>
-                    <ul>
-                        <li><a href=\"\">Femme</a></li>
-                        <li><a href=\"\">Homme</a></li>
+                    <ul >
+                        <li><a href=\"\">Garcons</a></li>
+                        <li><a href=\"\">Fille</a></li>
                     </ul>
                 </li>
             </ul>
@@ -221,16 +222,16 @@ class __TwigTemplate_3b2840b806c0223932b91d388966ca5389f3be7fe42fd60ebb6484124f1
             <div class=\"slideshow-container\">
 
                 ";
-        // line 163
+        // line 164
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["bannieres"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["banniere"]) {
-            // line 164
+            // line 165
             echo "                <div class=\"mySlides fade\" style=\"opacity: 1;\">
                     <!--<div class=\"numbertext\">1 / 3</div>-->
                     <img src=\"";
-            // line 166
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["banniere"], "cover", [], "any", false, false, false, 166), "getPath", [], "any", false, false, false, 166), "html", null, true);
+            // line 167
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["banniere"], "cover", [], "any", false, false, false, 167), "getPath", [], "any", false, false, false, 167), "html", null, true);
             echo "\" style=\"width:100%\">
                     <!--<div class=\"text\">Caption Text</div>-->
                 </div>
@@ -239,7 +240,7 @@ class __TwigTemplate_3b2840b806c0223932b91d388966ca5389f3be7fe42fd60ebb6484124f1
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['banniere'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 170
+        // line 171
         echo "
                 <a class=\"prev\" onclick=\"plusSlides(-1)\" style=\"display: none;\">&#10094;</a>
                 <a class=\"next\" onclick=\"plusSlides(1)\" style=\"display: none;\">&#10095;</a>
@@ -255,31 +256,32 @@ class __TwigTemplate_3b2840b806c0223932b91d388966ca5389f3be7fe42fd60ebb6484124f1
     </div>
 </div>
 
-<div class=\"row\">
+<div class=\"row\" style=\"margin-left: 0%; margin-right: 0%;\">
     ";
-        // line 186
+        // line 187
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["articles"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
-            // line 187
+            // line 188
             echo "    <a href=\"";
             echo url("articles");
             echo "/";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 187), "html", null, true);
-            echo "\" class=\"col-md-3\" style=\"margin-bottom: 15px;\">
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 188), "html", null, true);
+            echo "\" class=\"col-md-3\" style=\"margin-bottom: 15px;
+    text-decoration: none;color: #000\">
         ";
-            // line 188
-            if ((twig_get_attribute($this->env, $this->source, $context["article"], "cover", [], "any", false, false, false, 188) && twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["article"], "cover", [], "any", false, false, false, 188), "getPath", [], "any", false, false, false, 188))) {
-                // line 189
+            // line 190
+            if ((twig_get_attribute($this->env, $this->source, $context["article"], "cover", [], "any", false, false, false, 190) && twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["article"], "cover", [], "any", false, false, false, 190), "getPath", [], "any", false, false, false, 190))) {
+                // line 191
                 echo "            <div style=\"width: 260px;height: 250px;\">
                 <img src=\"";
-                // line 190
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["article"], "cover", [], "any", false, false, false, 190), "getPath", [], "any", false, false, false, 190), "html", null, true);
+                // line 192
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["article"], "cover", [], "any", false, false, false, 192), "getPath", [], "any", false, false, false, 192), "html", null, true);
                 echo "\" style=\"width: 100%;height: 250px;\" alt=\"\">
             </div>
         ";
             } else {
-                // line 193
+                // line 195
                 echo "        <svg class=\"bd-placeholder-img bd-placeholder-img-lg img-fluid\" width=\"100%\" height=\"250\"
         xmlns=\"http://www.w3.org/2000/svg\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\" role=\"img\"
         aria-label=\"Placeholder: Responsive image\">
@@ -289,12 +291,12 @@ class __TwigTemplate_3b2840b806c0223932b91d388966ca5389f3be7fe42fd60ebb6484124f1
     </svg>
         ";
             }
-            // line 201
+            // line 203
             echo "        <div class=\"product-brand pl-brand text-ellipsis \" data-cerberus=\"lnk_plpProduit_brand1\"
             style=\"text-align:center; font-size: 14px;font-weight: 600;overflow: hidden;white-space: nowrap;\">
             ";
-            // line 203
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "libelle", [], "any", false, false, false, 203), "html", null, true);
+            // line 205
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "libelle", [], "any", false, false, false, 205), "html", null, true);
             echo "
         </div>
         <div class=\"pl-price-line\" style=\"visibility: visible;\">
@@ -302,9 +304,9 @@ class __TwigTemplate_3b2840b806c0223932b91d388966ca5389f3be7fe42fd60ebb6484124f1
                 style=\"visibility: visible;font-weight: 600;font-size: 18px;font-weight: 600;font-size: 18px;text-align: center\">
                 <span class=\"product-price\">
                     ";
-            // line 209
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "prix", [], "any", false, false, false, 209), "html", null, true);
-            echo "
+            // line 211
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "prix", [], "any", false, false, false, 211), "html", null, true);
+            echo " FCFA
                 </span>
             </div>
         </div>
@@ -314,8 +316,17 @@ class __TwigTemplate_3b2840b806c0223932b91d388966ca5389f3be7fe42fd60ebb6484124f1
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 215
+        // line 217
         echo "</div>
+
+<div class=\"row\">
+    <div class=\"col-md-12 d-flex justify-content-center\" style=\"margin-left: 0px;margin-right: 0px;\">
+        ";
+        // line 221
+        echo twig_get_attribute($this->env, $this->source, ($context["articles"] ?? null), "render", [], "any", false, false, false, 221);
+        echo "
+    </div>
+</div>
 
 <script>
     var slideIndex = 1;
@@ -359,7 +370,7 @@ class __TwigTemplate_3b2840b806c0223932b91d388966ca5389f3be7fe42fd60ebb6484124f1
 
     public function getDebugInfo()
     {
-        return array (  318 => 215,  306 => 209,  297 => 203,  293 => 201,  283 => 193,  277 => 190,  274 => 189,  272 => 188,  265 => 187,  261 => 186,  243 => 170,  233 => 166,  229 => 164,  225 => 163,  209 => 149,  200 => 147,  196 => 146,  189 => 141,  180 => 139,  176 => 138,  37 => 1,);
+        return array (  326 => 221,  320 => 217,  308 => 211,  299 => 205,  295 => 203,  285 => 195,  279 => 192,  276 => 191,  274 => 190,  266 => 188,  262 => 187,  244 => 171,  234 => 167,  230 => 165,  226 => 164,  210 => 150,  201 => 148,  197 => 147,  190 => 142,  181 => 140,  177 => 139,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -496,19 +507,20 @@ class __TwigTemplate_3b2840b806c0223932b91d388966ca5389f3be7fe42fd60ebb6484124f1
 
 <div class=\"row\">
     <div class=\"col-md-12\">
-        <div class=\"col-md-3\">
-            <ul>
-                <li>
+        <div class=\"col-md-3\" id=\"categorie\">
+            <div id=\"categorie-libelle\">Catégorie</div>
+            <ul class=\"categorie-parent\">
+                <!--<li>
                     <a href=\"\">Marque</a>
                     <ul>
                         {% for marque in marques %}
                         <li><a href=\"\">{{ marque.libelle }}</a></li>
                         {% endfor %}
                     </ul>
-                </li>
-                <li>
+                </li>-->
+                <li >
                     <a href=\"\">Mois</a>
-                    <ul>
+                    <ul >
                         {% for age in ages %}
                         <li><a href=\"\">{{ age.libelle }}</a></li>
                         {% endfor %}
@@ -516,9 +528,9 @@ class __TwigTemplate_3b2840b806c0223932b91d388966ca5389f3be7fe42fd60ebb6484124f1
                 </li>
                 <li>
                     <a href=\"\">Sexe</a>
-                    <ul>
-                        <li><a href=\"\">Femme</a></li>
-                        <li><a href=\"\">Homme</a></li>
+                    <ul >
+                        <li><a href=\"\">Garcons</a></li>
+                        <li><a href=\"\">Fille</a></li>
                     </ul>
                 </li>
             </ul>
@@ -548,9 +560,10 @@ class __TwigTemplate_3b2840b806c0223932b91d388966ca5389f3be7fe42fd60ebb6484124f1
     </div>
 </div>
 
-<div class=\"row\">
+<div class=\"row\" style=\"margin-left: 0%; margin-right: 0%;\">
     {% for article in articles %}
-    <a href=\"{{ url('articles') }}/{{ article.id }}\" class=\"col-md-3\" style=\"margin-bottom: 15px;\">
+    <a href=\"{{ url('articles') }}/{{ article.id }}\" class=\"col-md-3\" style=\"margin-bottom: 15px;
+    text-decoration: none;color: #000\">
         {% if article.cover and article.cover.getPath %}
             <div style=\"width: 260px;height: 250px;\">
                 <img src=\"{{ article.cover.getPath }}\" style=\"width: 100%;height: 250px;\" alt=\"\">
@@ -572,12 +585,18 @@ class __TwigTemplate_3b2840b806c0223932b91d388966ca5389f3be7fe42fd60ebb6484124f1
             <div class=\"product-price-container pl-price\" data-cerberus=\"txt_plp_nonDiscountedPrice\"
                 style=\"visibility: visible;font-weight: 600;font-size: 18px;font-weight: 600;font-size: 18px;text-align: center\">
                 <span class=\"product-price\">
-                    {{ article.prix }}
+                    {{ article.prix }} FCFA
                 </span>
             </div>
         </div>
     </a>
 {% endfor %}
+</div>
+
+<div class=\"row\">
+    <div class=\"col-md-12 d-flex justify-content-center\" style=\"margin-left: 0px;margin-right: 0px;\">
+        {{ articles.render|raw }}
+    </div>
 </div>
 
 <script>

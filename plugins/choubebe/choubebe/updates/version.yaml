@@ -15,3 +15,18 @@
 1.0.6:
     - 'Created table choubebe_choubebe_banniere'
     - builder_table_create_choubebe_choubebe_banniere.php
+1.0.7:
+    - 'Created table choubebe_choubebe_commande'
+    - builder_table_create_choubebe_choubebe_commande.php
+1.0.8:
+    - 'Created table choubebe_choubebe_commande_produit'
+    - builder_table_create_choubebe_choubebe_commande_produit.php
+1.0.9:
+    - 'Created table choubebe_choubebe_statut_commande'
+    - builder_table_create_choubebe_choubebe_statut_commande.php
+1.0.10:
+    - 'Drop table choubebe_choubebe_statut_commande'
+    - builder_table_delete_choubebe_choubebe_statut_commande.php
+1.0.11:
+    - 'Updated table choubebe_choubebe_commande_produit'
+    - builder_table_update_choubebe_choubebe_commande_produit.php

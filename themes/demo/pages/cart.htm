@@ -3,3 +3,80 @@ url = "/cart"
 layout = "default"
 [Cart]
 ==
+<?php
+    
+    function onStart(){
+        $this['total'] = 0;
+    }
+?>
+==
+<div class="row" style="margin-left: 10%;margin-right: 10%;">
+
+<h2>Paniers  </h2>
+
+<style>
+    span {
+        font-size: 14px;
+        
+    }
+
+    .pd-span{
+        padding-top: 15px;
+    }
+</style>
+
+{% if articles|length > 0 %}
+    <div class="col-md-12" style="margin-top: 25px;">
+        <div class="col-md-6 pd-span">
+            ARTICLE
+        </div>
+        <div class="col-md-2 pd-span">QUANTITÉ</div>
+        <div class="col-md-2 pd-span"><span>PRIX UNITAIRE</span></div>
+        <div class="col-md-2 pd-span"><span>SOUS TOTAL</span></div>
+    </div>
+    {% for article in articles %}
+        <div class="col-md-12" style="margin-top: 25px;">
+            <div class="col-md-2">
+                <img src="{{ article.article.cover.getpath }}" style="width: 100%" alt="">
+            </div>
+            <div class="col-md-4 pd-span">
+                <span>{{ article.article.libelle }}</span>
+            </div>
+            <div class="col-md-2 pd-span"><span>{{ article.nbre }}</span></div>
+            <div class="col-md-2 pd-span"><span style="font-weight: bold;">{{ article.article.prix }} FCFA</span></div>
+            <div class="col-md-2 pd-span"><span style="font-weight: bold;">{{ article.article.prix * article.nbre }} FCFA</span></div>
+            {% set total = total + article.article.prix * article.nbre %}
+        </div>
+    {% endfor %}
+    <div class="col-md-12" style="margin-top: 25px;">
+        <a href="{{ url('/') }}" class="btn btn-primary">Poursuivre votre achat</a>
+        <a href="{{ url('/finaliser-commande') }}" class="btn btn-primary">Finaliser votre commande </a>
+    </div>
+{% else %}
+       
+<p>Aucun article commandés</p>
+    <a href="{{ url('/') }}">Passer une commande</a>
+{% endif %}
+
+<!--{% if articles|length > 0 %}
+    {% for article in articles %}
+    <ul>
+        <li><img src="{{ article.article.cover.getpath }}" alt=""></li>
+        <li>libelle : {{ article.article.libelle }}</li>
+        <li>Quatité :  {{ article.nbre }}</li>
+        <li>Prix unitaire :  {{ article.article.prix }}</li>
+        <li>Sous total :  {{ article.article.prix * article.nbre }}</li>
+        {% set total = total + article.article.prix * article.nbre %}
+    </ul>
+    {% endfor %}
+
+
+    total :  {{ total }} FCFA
+
+    <a href="{{ url('/') }}" class="btn btn-primary">Poursuivre votre achat</a>
+    <a href="{{ url('/finaliser-commande') }}" class="btn btn-primary">Finaliser votre commande </a>
+{% else %}
+    <p>Aucun article commandés</p>
+    <a href="{{ url('/') }}">Passer une commande</a>
+{% endif %}-->
+</div>

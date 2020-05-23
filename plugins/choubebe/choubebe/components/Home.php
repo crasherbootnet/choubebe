@@ -26,7 +26,7 @@ class Home extends Account {
     public function onRun() {
         $this->page['marques'] = MarqueModel::all();
         $this->page['ages'] = AgeModel::all();
-        $this->page['articles'] = ArticleModel::paginate(12);
+        $this->page['articles'] = ArticleModel::paginate(8);
         $this->page['bannieres'] = BanniereModel::all();
     }
 }

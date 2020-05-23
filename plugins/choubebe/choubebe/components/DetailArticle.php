@@ -22,6 +22,8 @@ class DetailArticle extends Account {
 
     public function onRun() {
         $idArticle = $this->param('article_id');
-        $this->page['article'] = ArticleModel::find($idArticle);
+        $this->page['article'] = ArticleModel::with(['age'])->where('id', $idArticle)->first();
+        // Recuperation des aricles similaires 
+        $this->page['articles'] = ArticleModel::take(4)->get();
     }
 }

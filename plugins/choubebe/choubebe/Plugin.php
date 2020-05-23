@@ -10,6 +10,7 @@ class Plugin extends PluginBase
             "Choubebe\Choubebe\Components\Home" => "Home",
             "Choubebe\Choubebe\Components\DetailArticle" => "DetailArticle",
             "Choubebe\Choubebe\Components\Cart" => "Cart",
+            "Choubebe\Choubebe\Components\Commande" => "Commande",
         ];
     }
 

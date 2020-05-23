@@ -7,7 +7,7 @@ layout = "default"
 <style>
     .slide {
         position: absolute;
-        z-index: 1;
+        z-index: 1; 
         left: 0;
         top: 0;
         right: 0;
@@ -19,8 +19,8 @@ layout = "default"
 
     .slideset {
         position: relative;
-        background: #ebebeb;
-        border: 1px solid #dddddd;
+        background: #fff;
+        border: 0px solid #dddddd;
     }
 
     .slideshow {
@@ -40,16 +40,26 @@ layout = "default"
     }
 
     .slide img {
-        width: 43%;
+        width: 100%;
     }
 
     .specification span{
         font-weight: 500;font-size: 16px;
     }
+
+    #addShopping{
+        width: 100%;
+        height: 7%;
+        font-size: 14px;
+    }
+
+    .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+        background-color: unset;
+    }
 </style>
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <div class="slideshow gallery-js-ready autorotation-disabled">
             <div class="mask">
                 <div class="slideset" style="height: 420px;">
@@ -67,7 +77,7 @@ layout = "default"
                 </div>
                 <span class="loader" style="display: none;"></span>
             </div>
-            <ul class="pagination img-miniature">
+            <ul class="pagination img-miniature" style="display: inline-block;">
 
                 {% for key,photo in article.photos %}
                     {% if key == 0 %}
@@ -86,41 +96,83 @@ layout = "default"
             </ul>
         </div>
     </div>
-    <div class="col-md-8">
-        <h4> {{ article.libelle }} </h4>
-        <span> Marque : {{ article.marque.libelle }}</span> <br>
-        <span> Prix : {{ article.prix }} FCFA</span> <br>
-        <span> Sexe : {{ article.sexe }} FCFA</span> <br>
-        <span> Age : {{ article.age.libelle }} FCFA</span> <br>
-        <button type="button" id="addShopping" data-id="{{ article.id }}" class="btn btn-primary">
-            <i class="fas fa-shopping-cart"></i>
-            Je commande
+    <div class="col-md-6">
+        <h4 style="font-size: 22px;font-weight: bold;"> {{ article.libelle }} </h4>
+        <span style="font-size: 14px;display: block;"> Marque : {{ article.marque.libelle }}</span>
+        <span style="font-size: 14px;display: block"> Sexe : {{ article.sexe }}</span>
+        <span style="font-size: 14px;display: block"> Age : {{ article.age.libelle }} </span>
+        <span style="font-size: 2.25rem;display: block;margin-top: 14px;"> Prix : {{ article.prix }} FCFA</span>
+        <button type="button" style="margin-top: 27px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);"id="addShopping" data-id="{{ article.id }}" class="btn btn-primary">
+            <i class="fas fa-shopping-cart"></i> Je commande
         </a>
     </div>
 </div>
 
+
 <div class="row">
     <div class="col-md-12">
-        <span><h4>Description</h4></span>
-        <p>
+        <span><h4 style="font-size: 2.25rem;">Description</h4></span>
+        <p style="font-size: 14px">
             {{ article.description }}
         </p>
     </div>
 </div>
 
+<div class="row" style="padding-top: 20px;">
+    <h4 class="col-md-12" style="font-size: 2.25rem;margin-bottom: 12px;">Les articles similaires </h4>
+    {% for article in articles %}
+    <a href="{{ url('articles') }}/{{ article.id }}" class="col-md-3" style="margin-bottom: 15px;
+    text-decoration: none;color: #000">
+        {% if article.cover and article.cover.getPath %}
+            <div style="width: 260px;height: 250px;">
+                <img src="{{ article.cover.getPath }}" style="width: 100%;height: 250px;" alt="">
+            </div>
+        {% else %}
+        <svg class="bd-placeholder-img bd-placeholder-img-lg img-fluid" width="100%" height="250"
+        xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+        aria-label="Placeholder: Responsive image">
+        <title>Placeholder</title>
+        <rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6"
+            dy=".3em">Responsive image</text>
+    </svg>
+        {% endif %}
+        <div class="product-brand pl-brand text-ellipsis " data-cerberus="lnk_plpProduit_brand1"
+            style="text-align:center; font-size: 14px;font-weight: 600;overflow: hidden;white-space: nowrap;">
+            {{ article.libelle }}
+        </div>
+        <div class="pl-price-line" style="visibility: visible;">
+            <div class="product-price-container pl-price" data-cerberus="txt_plp_nonDiscountedPrice"
+                style="visibility: visible;font-weight: 600;font-size: 18px;font-weight: 600;font-size: 18px;text-align: center">
+                <span class="product-price">
+                    {{ article.prix }} FCFA
+                </span>
+            </div>
+        </div>
+    </a>
+{% endfor %}
+</div>
+
 <div class="modal" tabindex="-1" role="dialog" id="myModal">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Ajouté au panier !</h5>
+        <div class="modal-header" style="border-bottom: 0px;">
+          <h5 class="modal-title" style="font-size: 2.25rem;">Ajouté au panier !</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          <p>{{ article.libelle }} a été ajouté à votre panier </p>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">POURSUIVRE VOTRE ACHAT</button>
-          <a href="{{ url('cart') }}" class="btn btn-primary">FINALISER LA COMMANDE </a>
+        <div class="modal-body row">
+            <p style="font-size: 2rem;" class="col-md-12">{{ article.libelle }} a été ajouté à votre panier </p>
+          <div class="col-md-12">
+            <div class="row" style="margin-top: 20px;margin-bottom: 20px;">
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-primary col-md-12" data-dismiss="modal" style="font-size: 14px;box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);height: 35px;">POURSUIVRE VOTRE ACHAT</button>
+                </div>
+                <div class="col-md-6">
+                    <a href="{{ url('cart') }}" class="btn btn-success col-md-12" style="font-size: 14px;box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);height: 35px;">FINALISER LA COMMANDE </a>
+                </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

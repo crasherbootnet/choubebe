@@ -1,0 +1,10 @@
+name: StatutCommande
+form: $/choubebe/parametre/models/statutcommande/fields.yaml
+modelClass: Choubebe\Parametre\Models\StatutCommande
+defaultRedirect: choubebe/parametre/statutcommande
+create:
+    redirect: 'choubebe/parametre/statutcommande/update/:id'
+    redirectClose: choubebe/parametre/statutcommande
+update:
+    redirect: choubebe/parametre/statutcommande
+    redirectClose: choubebe/parametre/statutcommande
